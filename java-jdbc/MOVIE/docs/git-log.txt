@@ -1,0 +1,2 @@
+79c1de6 docs: añadir guía de entrega y criterios de verificación
+45bb3ca feat: implementar módulo películas con JDBC y CRUD

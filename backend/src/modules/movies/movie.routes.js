@@ -1,0 +1,1 @@
+const r=require('express').Router();const c=require('./movie.controller');const {authenticate,authorize}=require('../../middlewares/auth.middleware');r.get('/',c.list);r.get('/:id',c.one);r.post('/',authenticate,authorize('ADMIN'),c.create);r.put('/:id',authenticate,authorize('ADMIN'),c.update);r.delete('/:id',authenticate,authorize('ADMIN'),c.remove);module.exports=r;

@@ -1,0 +1,1 @@
+const r=require('express').Router();const c=require('./user.controller');const {authenticate,authorize}=require('../../middlewares/auth.middleware');r.use(authenticate,authorize('ADMIN'));r.get('/',c.list);r.get('/:id',c.one);r.put('/:id',c.update);r.patch('/:id/status',c.status);r.delete('/:id',c.remove);module.exports=r;

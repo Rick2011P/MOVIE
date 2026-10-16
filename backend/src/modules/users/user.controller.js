@@ -1,0 +1,2 @@
+const repo=require('./user.repository');const svc=require('./user.service');
+exports.list=async(req,res)=>res.json(await repo.list());exports.one=async(req,res)=>res.json(await svc.one(req.params.id));exports.update=async(req,res)=>res.json(await svc.update(req.params.id,req.body));exports.status=async(req,res)=>res.json(await svc.status(req.params.id,req.body));exports.remove=async(req,res)=>{await svc.status(req.params.id,{estado:false});res.status(204).end();};

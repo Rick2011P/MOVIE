@@ -1,0 +1,2 @@
+import {Navigate,Outlet} from 'react-router-dom';import {useAuth} from '../context/AuthContext';
+export default function ProtectedRoute({roles}){const {token,loading,role}=useAuth();if(loading)return <main className="container"><p>Verificando sesión…</p></main>;if(!token)return <Navigate to="/login" replace/>;if(roles&&!roles.includes(role))return <Navigate to="/acceso-denegado" replace/>;return <Outlet/>;}
